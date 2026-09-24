@@ -147,6 +147,18 @@ button { font: inherit; }
 .skills { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
 .skills span { border: 1px solid var(--line); border-radius: 999px; padding: 9px 12px; font-size: 11px; color: #aaa; }
 
+.hero-logo-card { justify-content: center; align-items: center; text-align: center; padding: 18px; }
+.hero-logo { width: min(100%, 280px); max-height: 250px; object-fit: cover; display: block; border: 1px solid rgba(255,255,255,.08); }
+.hero-logo-card .hero-line { width: 100%; }
+
+.about-photo-stack { position: relative; min-height: 650px; }
+.about-photo { margin: 0; overflow: hidden; border: 1px solid var(--line); background: #0c0c0c; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1); }
+.about-photo-main { width: 72%; height: 610px; }
+.about-photo-main img { object-position: center 28%; }
+.about-photo-setup { position: absolute; width: 52%; height: 330px; right: 0; bottom: 0; box-shadow: 0 28px 70px rgba(0,0,0,.52); }
+.about-photo-setup img { object-position: center; }
+
 .services { padding-top: 130px; padding-bottom: 160px; background: #080808; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .service-list { max-width: var(--max); margin: auto; }
 .service-row { display: grid; grid-template-columns: 70px minmax(250px, .8fr) 1fr; gap: 30px; align-items: center; min-height: 126px; border-top: 1px solid var(--line); }
@@ -198,6 +210,9 @@ footer p:last-child { justify-self: end; }
   .project-media, .project-large .project-media { aspect-ratio: 16/11; }
   .about { grid-template-columns: 1fr; }
   .setup-placeholder { min-height: 500px; }
+  .about-photo-stack { min-height: 590px; }
+  .about-photo-main { width: 78%; height: 540px; }
+  .about-photo-setup { width: 50%; height: 285px; }
   .service-row { grid-template-columns: 45px 1fr; padding: 24px 0; }
   .service-row p { grid-column: 2; }
 }
@@ -215,8 +230,13 @@ footer p:last-child { justify-self: end; }
   .project-grid { gap: 4px; }
   .project-media, .project-large .project-media { aspect-ratio: 4/5; }
   .project-placeholder { font-size: 15vw; }
+  .project-placeholder-food { font-size: 12.5vw; letter-spacing: -.07em; }
   .about { padding-top: 100px; padding-bottom: 110px; }
   .setup-placeholder { min-height: 390px; }
+  .about-photo-stack { min-height: 470px; }
+  .about-photo-main { width: 82%; height: 430px; }
+  .about-photo-setup { width: 54%; height: 230px; }
+  .hero-logo { width: min(100%, 240px); }
   .services { padding-top: 100px; padding-bottom: 110px; }
   .service-row { grid-template-columns: 34px 1fr; gap: 14px; }
   .contact { min-height: 620px; }
