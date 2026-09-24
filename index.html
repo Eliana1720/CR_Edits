@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CR EDITS — portfolio de edición de video para redes, YouTube, gaming, viajes, eventos y contenido de marca." />
+  <title>CR EDITS — Video Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="CR EDITS inicio">
+      <span class="brand-mark">CR</span>
+      <span class="brand-name">EDITS</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#projects">Proyectos</a>
+      <a href="#about">Sobre mí</a>
+      <a href="#services">Servicios</a>
+      <a href="#contact" class="nav-cta">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad">
+      <div class="hero-ghost ghost-one">CR</div>
+      <div class="hero-ghost ghost-two">CR</div>
+
+      <div class="hero-copy reveal">
+        <p class="eyebrow">VIDEO EDITOR · ARGENTINA</p>
+        <h1>Edición que<br><span>se siente.</span></h1>
+        <p class="hero-text">Edición de video para redes, contenido digital, streams y marcas. Ritmo, claridad y una estética limpia que acompaña cada historia.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="button button-primary">Ver proyectos</a>
+          <a href="#contact" class="button button-ghost">Trabajemos juntos</a>
+        </div>
+      </div>
+
+      <div class="hero-side reveal delay-1">
+        <div class="hero-card">
+          <span class="tiny-label">CR EDITS</span>
+          <p>Portfolio 2026</p>
+          <div class="hero-line"></div>
+          <span>Reels · Shorts · TikTok · YouTube</span>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#projects" aria-label="Bajar a proyectos">
+        <span></span> Scroll
+      </a>
+    </section>
+
+    <section class="intro section-pad narrow reveal">
+      <p class="eyebrow">BIENVENIDOS</p>
+      <h2>En proyectos vas a encontrar una selección de mis ediciones.</h2>
+      <p>Trabajo piezas pensadas para verse bien, entenderse rápido y mantener la atención sin sobrecargar la imagen.</p>
+    </section>
+
+    <section class="projects section-pad" id="projects">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">TRABAJOS SELECCIONADOS</p>
+          <h2>Proyectos</h2>
+        </div>
+        <p>Elegí una categoría para ver una muestra. Después podés reemplazar las imágenes y videos por tus trabajos finales.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card project-large reveal" data-category="Gastronomía" data-video="assets/videos/gastronomia.mp4">
+          <button class="project-open" type="button" aria-label="Abrir proyecto Gastronomía">
+            <div class="project-media project-food">
+              <span class="project-number">01</span>
+              <div class="project-placeholder">GASTRONOMÍA</div>
+            </div>
+            <div class="project-meta">
+              <div><h3>Gastronomía</h3><p>Reel vertical · Storytelling</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="project-card reveal delay-1" data-category="Eventos" data-video="assets/videos/eventos.mp4">
+          <button class="project-open" type="button" aria-label="Abrir proyecto Eventos">
+            <div class="project-media project-event">
+              <span class="project-number">02</span>
+              <div class="project-placeholder">EVENTOS</div>
+            </div>
+            <div class="project-meta">
+              <div><h3>Eventos</h3><p>Fiesta de 15 · Reel</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="project-card reveal" data-category="Viajes" data-video="assets/videos/viajes.mp4">
+          <button class="project-open" type="button" aria-label="Abrir proyecto Viajes">
+            <div class="project-media project-travel">
+              <span class="project-number">03</span>
+              <div class="project-placeholder">VIAJES</div>
+            </div>
+            <div class="project-meta">
+              <div><h3>Viajes</h3><p>Vertical · Travel edit</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="project-card project-large reveal delay-1" data-category="Gaming" data-video="assets/videos/gaming.mp4">
+          <button class="project-open" type="button" aria-label="Abrir proyecto Gaming">
+            <div class="project-media project-gaming">
+              <span class="project-number">04</span>
+              <div class="project-placeholder">GAMING</div>
+            </div>
+            <div class="project-meta">
+              <div><h3>Gaming & Streams</h3><p>Clips · Highlights · Vertical</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="project-card reveal" data-category="Contenido para redes" data-video="assets/videos/social.mp4">
+          <button class="project-open" type="button" aria-label="Abrir proyecto Contenido para redes">
+            <div class="project-media project-social">
+              <span class="project-number">05</span>
+              <div class="project-placeholder">SOCIAL</div>
+            </div>
+            <div class="project-meta">
+              <div><h3>Contenido para redes</h3><p>Talking head · Ping pong</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="project-card reveal delay-1" data-category="YouTube" data-video="assets/videos/youtube.mp4">
+          <button class="project-open" type="button" aria-label="Abrir proyecto YouTube">
+            <div class="project-media project-youtube">
+              <span class="project-number">06</span>
+              <div class="project-placeholder">YOUTUBE</div>
+            </div>
+            <div class="project-meta">
+              <div><h3>YouTube</h3><p>Long form · Dinámica visual</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <section class="about section-pad" id="about">
+      <div class="about-visual reveal">
+        <div class="setup-placeholder">
+          <div class="monitor">
+            <div class="monitor-ui"><span></span><span></span><span></span></div>
+            <div class="timeline"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="desk-line"></div>
+          <span class="setup-caption">TU FOTO DE SETUP ACÁ</span>
+        </div>
+      </div>
+      <div class="about-copy reveal delay-1">
+        <p class="eyebrow">SOBRE MÍ</p>
+        <h2>Edición pensada para el ritmo de cada contenido.</h2>
+        <p>Soy Camila, editora de video enfocada en contenido para redes sociales. Trabajo principalmente piezas verticales, videos dinámicos, subtítulos, ritmo, música, sonido y adaptación de contenido para distintas plataformas.</p>
+        <p>Busco que cada edición tenga intención: que acompañe lo que se está contando y que visualmente se sienta clara, actual y cuidada.</p>
+        <div class="skills">
+          <span>CapCut</span><span>Reels</span><span>TikTok</span><span>Shorts</span><span>YouTube</span><span>Streams</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section-pad" id="services">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">QUÉ HAGO</p><h2>Servicios</h2></div>
+        <p>Soluciones de edición para contenido corto y largo, adaptadas al formato y a la plataforma.</p>
+      </div>
+
+      <div class="service-list reveal">
+        <div class="service-row"><span>01</span><h3>Reels, TikTok & Shorts</h3><p>Edición vertical, subtítulos, ritmo, música y efectos.</p></div>
+        <div class="service-row"><span>02</span><h3>Streams & Gaming</h3><p>Selección de momentos, highlights y adaptación a vertical.</p></div>
+        <div class="service-row"><span>03</span><h3>YouTube</h3><p>Videos largos, cortes, B-roll y recursos visuales.</p></div>
+        <div class="service-row"><span>04</span><h3>Contenido de marca</h3><p>Videos para productos, servicios y comunicación en redes.</p></div>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="contact">
+      <div class="contact-bg" aria-hidden="true">CR</div>
+      <div class="contact-inner reveal">
+        <p class="eyebrow">CONTACTO</p>
+        <h2>¿Tenés un proyecto?<br>Hablemos.</h2>
+        <p>Contame qué necesitás editar y para qué plataforma. Podemos trabajar una pieza puntual o contenido recurrente.</p>
+        <div class="contact-actions">
+          <a class="button button-light" href="mailto:TUEMAIL@GMAIL.COM">Enviar email</a>
+          <a class="text-link" href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top"><span class="brand-mark">CR</span><span class="brand-name">EDITS</span></a>
+    <p>Video Editor · Argentina</p>
+    <p>© <span id="year"></span> CR EDITS</p>
+  </footer>
+
+  <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+      <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">×</button>
+      <div class="modal-video-wrap">
+        <video id="modal-video" controls playsinline preload="metadata"></video>
+        <div class="video-empty" id="video-empty">
+          <strong id="modal-title">Proyecto</strong>
+          <p>Agregá el archivo MP4 correspondiente dentro de <code>assets/videos/</code>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
