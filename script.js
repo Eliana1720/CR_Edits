@@ -1,99 +1,61 @@
-const header = document.querySelector('.site-header');
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
-const navLinks = document.querySelectorAll('.nav a');
-const modal = document.getElementById('project-modal');
-const modalVideo = document.getElementById('modal-video');
-const videoEmpty = document.getElementById('video-empty');
-const modalTitle = document.getElementById('modal-title');
-const projectCards = document.querySelectorAll('.project-card');
-
-// Header con fondo al hacer scroll
-const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 20);
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive: true });
+// Año automático
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();
 
 // Menú mobile
-menuToggle.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuToggle.classList.toggle('active', isOpen);
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-  document.body.style.overflow = isOpen ? 'hidden' : '';
+const menuButton = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
+
+menuButton?.addEventListener('click', () => {
+  const open = nav.classList.toggle('is-open');
+  menuButton.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
 });
 
-navLinks.forEach(link => link.addEventListener('click', () => {
-  nav.classList.remove('open');
-  menuToggle.classList.remove('active');
-  menuToggle.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}));
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('is-open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
 
-// Animaciones al entrar en pantalla
-const observer = new IntersectionObserver((entries) => {
+// Spotlight verde que sigue al mouse dentro de cards
+const spotlightCards = document.querySelectorAll('[data-spotlight]');
+spotlightCards.forEach(card => {
+  card.addEventListener('pointermove', event => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`);
+    card.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`);
+  });
+});
+
+// Animaciones al entrar al viewport
+const revealItems = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+revealItems.forEach(item => revealObserver.observe(item));
 
-// Modal de proyectos. Si el video no existe, muestra instrucción en vez de romper la página.
-function openProject(card) {
-  const title = card.dataset.category || 'Proyecto';
-  const src = card.dataset.video || '';
-  modalTitle.textContent = title;
-  modal.classList.add('active');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('modal-open');
+// Filtro simple de portfolio
+const filters = document.querySelectorAll('.filter');
+const projects = document.querySelectorAll('.project-card');
 
-  modalVideo.style.display = 'none';
-  videoEmpty.style.display = 'block';
-  modalVideo.removeAttribute('src');
+filters.forEach(button => {
+  button.addEventListener('click', () => {
+    filters.forEach(filter => filter.classList.remove('is-active'));
+    button.classList.add('is-active');
 
-  if (!src) return;
-
-  // Intentamos cargar el MP4. Si todavía no lo agregaste, queda visible el placeholder.
-  modalVideo.src = src;
-  modalVideo.load();
-
-  const onReady = () => {
-    videoEmpty.style.display = 'none';
-    modalVideo.style.display = 'block';
-    modalVideo.removeEventListener('loadedmetadata', onReady);
-  };
-
-  const onError = () => {
-    modalVideo.style.display = 'none';
-    videoEmpty.style.display = 'block';
-    modalVideo.removeEventListener('error', onError);
-  };
-
-  modalVideo.addEventListener('loadedmetadata', onReady, { once: true });
-  modalVideo.addEventListener('error', onError, { once: true });
-}
-
-function closeModal() {
-  modal.classList.remove('active');
-  modal.setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('modal-open');
-  modalVideo.pause();
-  modalVideo.removeAttribute('src');
-  modalVideo.load();
-}
-
-projectCards.forEach(card => {
-  card.querySelector('.project-open').addEventListener('click', () => openProject(card));
+    const selected = button.dataset.filter;
+    projects.forEach(project => {
+      const show = selected === 'all' || project.dataset.category === selected;
+      project.classList.toggle('is-hidden', !show);
+    });
+  });
 });
-
-document.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', closeModal));
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-});
-
-// Año automático
-const year = document.getElementById('year');
-if (year) year.textContent = new Date().getFullYear();
