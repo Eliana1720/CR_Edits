@@ -1,240 +1,333 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CR EDITS — Portfolio de edición de video para redes, streams, YouTube y marcas." />
-  <title>CR EDITS — Video Editor</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="description" content="CR EDITS — Portfolio de edición de video para redes, streams, YouTube y marcas." />
+ <title>CR EDITS — Video Editor</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&display=swap"
+  rel="stylesheet">
+ <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <div class="ambient ambient-one" aria-hidden="true"></div>
-  <div class="ambient ambient-two" aria-hidden="true"></div>
+ <div class="ambient ambient-one" aria-hidden="true"></div>
+ <div class="ambient ambient-two" aria-hidden="true"></div>
 
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Ir al inicio">
-      <img src="assets/images/logo-cr-edits.png" alt="Logo CR EDITS" />
-      <span>CR EDITS</span>
-    </a>
+ <header class="site-header" id="top">
+  <a class="brand" href="#top" aria-label="Ir al inicio">
+   <img src="assets/images/logo-cr-edits.png" alt="Logo CR EDITS" />
+   <span>CR EDITS</span>
+  </a>
 
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span>
-    </button>
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+   <span></span><span></span>
+  </button>
 
-    <nav class="nav" aria-label="Navegación principal">
-      <a href="#servicios">Servicios</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a class="nav-cta" href="#contacto">Contactame</a>
-    </nav>
-  </header>
+  <nav class="nav" aria-label="Navegación principal">
+   <a href="#servicios">Servicios</a>
+   <a href="#portfolio">Portfolio</a>
+   <a href="#sobre-mi">Sobre mí</a>
+   <a class="nav-cta" href="#contacto">Contactame</a>
+  </nav>
+ </header>
 
-  <main>
-    <section class="hero section-shell reveal">
-      <div class="hero-copy">
-        <p class="eyebrow">VIDEO EDITOR · CONTENIDO DIGITAL</p>
-        <h1>Edición que hace que <span>te quedes mirando.</span></h1>
-        <p class="hero-text">
-          Transformo material crudo en piezas ágiles, prolijas y pensadas para redes, streams y YouTube.
-          Ritmo, subtítulos, sonido y una estética que acompaña tu identidad.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#portfolio">Ver trabajos</a>
-          <a class="button button-ghost" href="#contacto">Hablemos</a>
-        </div>
-        <p class="microcopy"><span class="status-dot"></span> Disponible para proyectos freelance</p>
-      </div>
+ <div class="project-modal" id="projectModal" aria-hidden="true">
+  <div class="project-modal-backdrop"></div>
+  <div class="project-modal-box">
 
-      <div class="hero-visual spotlight-card" data-spotlight>
-        <div class="hero-frame">
-          <img src="assets/images/logo-cr-edits.png" alt="Identidad visual de CR EDITS" />
-          <div class="frame-caption">
-            <span>CR EDITS</span>
-            <small>VIDEO EDITOR</small>
-          </div>
-        </div>
-      </div>
-    </section>
+   <button class="project-modal-close" id="projectModalClose" type="button" aria-label="Cerrar proyecto">
+    ×
+   </button>
 
-    <section class="section-shell section-block reveal" id="servicios">
-      <div class="section-heading">
-        <p class="eyebrow">¿QUÉ NECESITÁS?</p>
-        <h2>Edición según el tipo de contenido.</h2>
-        <p>Cada formato pide un ritmo distinto. La edición se adapta al contenido, no al revés.</p>
-      </div>
+   <div class="project-modal-video">
+    <video id="projectModalVideo" controls playsinline></video>
+   </div>
+   <div class="project-modal-info">
+    <p class="eyebrow">PROYECTO</p>
+    <h3 id="projectModalTitle">
+     Título del proyecto
+    </h3>
+    <p id="projectModalDescription">
+     Descripción del proyecto.
+    </p>
+   </div>
+  </div>
+ </div>
 
-      <div class="service-grid">
-        <article class="service-card spotlight-card" data-spotlight>
-          <span class="card-number">01</span>
-          <div>
-            <p class="tag">REDES</p>
-            <h3>Reels, TikTok & Shorts</h3>
-            <p>Clips verticales con cortes dinámicos, subtítulos, música, recursos visuales y hooks claros.</p>
-          </div>
-          <span class="arrow">↗</span>
-        </article>
-
-        <article class="service-card spotlight-card" data-spotlight>
-          <span class="card-number">02</span>
-          <div>
-            <p class="tag">STREAMS</p>
-            <h3>Gaming & highlights</h3>
-            <p>Selección de momentos, montaje de cámara/gameplay, memes, zooms y ritmo para retención.</p>
-          </div>
-          <span class="arrow">↗</span>
-        </article>
-
-        <article class="service-card spotlight-card" data-spotlight>
-          <span class="card-number">03</span>
-          <div>
-            <p class="tag">FORMATO LARGO</p>
-            <h3>YouTube & talking head</h3>
-            <p>Edición narrativa, limpieza de pausas, B-roll, títulos, sonido y continuidad visual.</p>
-          </div>
-          <span class="arrow">↗</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-shell section-block reveal" id="portfolio">
-      <div class="section-heading portfolio-heading">
-        <div>
-          <p class="eyebrow">PORTFOLIO</p>
-          <h2>Algunos formatos que trabajo.</h2>
-        </div>
-        <div class="filters" role="group" aria-label="Filtrar proyectos">
-          <button class="filter is-active" data-filter="all">Todos</button>
-          <button class="filter" data-filter="social">Redes</button>
-          <button class="filter" data-filter="long">Largos</button>
-        </div>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card project-tall spotlight-card" data-category="social" data-spotlight>
-          <div class="project-art art-food">
-            <span>GASTRONOMÍA</span>
-          </div>
-          <div class="project-info">
-            <div><p class="tag">REEL · 9:16</p><h3>Gastronomía</h3></div>
-            <span class="project-icon">↗</span>
-          </div>
-        </article>
-
-        <article class="project-card spotlight-card" data-category="social" data-spotlight>
-          <div class="project-art art-event"><span>EVENTOS</span></div>
-          <div class="project-info">
-            <div><p class="tag">SOCIAL · 9:16</p><h3>Eventos</h3></div>
-            <span class="project-icon">↗</span>
-          </div>
-        </article>
-
-        <article class="project-card spotlight-card" data-category="social" data-spotlight>
-          <div class="project-art art-travel"><span>VIAJES</span></div>
-          <div class="project-info">
-            <div><p class="tag">REEL · 9:16</p><h3>Viajes</h3></div>
-            <span class="project-icon">↗</span>
-          </div>
-        </article>
-
-        <article class="project-card project-wide spotlight-card" data-category="long" data-spotlight>
-          <div class="project-art art-gaming"><span>GAMING / STREAM</span></div>
-          <div class="project-info">
-            <div><p class="tag">HIGHLIGHTS · 16:9 / 9:16</p><h3>Gaming & streams</h3></div>
-            <span class="project-icon">↗</span>
-          </div>
-        </article>
-
-        <article class="project-card spotlight-card" data-category="long" data-spotlight>
-          <div class="project-art art-podcast"><span>PODCAST</span></div>
-          <div class="project-info">
-            <div><p class="tag">TALKING HEAD</p><h3>Podcast</h3></div>
-            <span class="project-icon">↗</span>
-          </div>
-        </article>
-
-        <article class="project-card spotlight-card" data-category="long" data-spotlight>
-          <div class="project-art art-youtube"><span>YOUTUBE</span></div>
-          <div class="project-info">
-            <div><p class="tag">VIDEO · 16:9</p><h3>YouTube</h3></div>
-            <span class="project-icon">↗</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-shell section-block about reveal" id="sobre-mi">
-      <div class="about-images">
-        <figure class="portrait spotlight-card" data-spotlight>
-          <img src="assets/images/about-camila.png" alt="Camila, editora de video" />
-        </figure>
-        <figure class="setup spotlight-card" data-spotlight>
-          <img src="assets/images/setup-cr-edits.png" alt="Setup de edición de CR EDITS" />
-        </figure>
-      </div>
-
-      <div class="about-copy">
-        <p class="eyebrow">SOBRE MÍ</p>
-        <h2>Edición con criterio, curiosidad y ganas de seguir aprendiendo.</h2>
-        <p>
-          Soy Camila, editora de video autodidacta. Me gusta agarrar material en bruto y encontrarle el ritmo:
-          qué cortar, qué dejar respirar y qué recurso suma de verdad.
-        </p>
-        <p>
-          Trabajo principalmente con contenido para redes, streams, gaming, gastronomía, eventos y formatos de YouTube.
-          Si algo todavía no lo sé, lo investigo y lo aplico.
-        </p>
-        <div class="tool-row" aria-label="Herramientas">
-          <span>CapCut</span><span>OBS</span><span>Canva</span><span>Edición vertical</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-shell section-block reveal">
-      <div class="section-heading">
-        <p class="eyebrow">CÓMO TRABAJO</p>
-        <h2>Simple, ordenado y sin vueltas.</h2>
-      </div>
-
-      <div class="process-grid">
-        <article class="process-item">
-          <span>01</span>
-          <h3>Me pasás el material</h3>
-          <p>Reviso objetivo, formato, referencias y qué querés transmitir.</p>
-        </article>
-        <article class="process-item">
-          <span>02</span>
-          <h3>Armo la edición</h3>
-          <p>Selecciono, corto, ritmo, subtítulos, sonido y recursos necesarios.</p>
-        </article>
-        <article class="process-item">
-          <span>03</span>
-          <h3>Ajustamos</h3>
-          <p>Revisamos detalles y dejo la pieza lista para publicar.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-shell contact reveal" id="contacto">
-      <div class="contact-glow" aria-hidden="true"></div>
-      <p class="eyebrow">CONTACTO</p>
-      <h2>¿Tenés material para editar?</h2>
-      <p>Contame qué estás haciendo y vemos cómo llevarlo a una pieza que funcione.</p>
-      <a class="button button-primary" href="mailto:TUEMAIL@EMAIL.COM">Escribime por mail</a>
-      <small>Reemplazá TUEMAIL@EMAIL.COM por tu mail real en index.html.</small>
-    </section>
-  </main>
-
-  <footer class="footer section-shell">
-    <div class="footer-brand">
-      <img src="assets/images/logo-cr-edits.png" alt="" />
-      <div><strong>CR EDITS</strong><span>Video Editor</span></div>
+ <main>
+  <section class="hero section-shell reveal">
+   <div class="hero-copy">
+    <p class="eyebrow">VIDEO EDITOR · CONTENIDO DIGITAL</p>
+    <h1>Edición que hace que <span>te quedes mirando.</span></h1>
+    <p class="hero-text">
+     Transformo material crudo en piezas ágiles, prolijas y pensadas para redes, streams y YouTube.
+     Ritmo, subtítulos, sonido y una estética que acompaña tu identidad.
+    </p>
+    <div class="hero-actions">
+     <a class="button button-primary" href="#portfolio">Ver trabajos</a>
+     <a class="button button-ghost" href="#contacto">Hablemos</a>
     </div>
-    <p>© <span id="year"></span> CR EDITS</p>
-  </footer>
+    <p class="microcopy"><span class="status-dot"></span> Disponible para proyectos freelance</p>
+   </div>
+   <div class="hero-logo-only">
+    <img src="assets/images/logo-cr-edits.png" alt="CR EDITS" class="hero-logo-main" />
+   </div>
+  </section>
 
-  <script src="script.js"></script>
+  <section class="section-shell section-block reveal" id="servicios">
+   <div class="section-heading">
+    <p class="eyebrow">¿QUÉ NECESITÁS?</p>
+    <h2>Edición según el tipo de contenido.</h2>
+    <p>Cada formato pide un ritmo distinto. La edición se adapta al contenido, no al revés.</p>
+   </div>
+
+   <div class="service-grid">
+    <article class="service-card spotlight-card" data-spotlight>
+     <span class="card-number">01</span>
+     <div>
+      <p class="tag">REDES</p>
+      <h3>Reels, TikTok & Shorts</h3>
+      <p>Clips verticales con cortes dinámicos, subtítulos, música, recursos visuales y hooks claros.</p>
+     </div>
+     <span class="arrow">↗</span>
+    </article>
+
+    <article class="service-card spotlight-card" data-spotlight>
+     <span class="card-number">02</span>
+     <div>
+      <p class="tag">STREAMS</p>
+      <h3>Gaming & highlights</h3>
+      <p>Selección de momentos, montaje de cámara/gameplay, memes, zooms y ritmo para retención.</p>
+     </div>
+     <span class="arrow">↗</span>
+    </article>
+
+    <article class="service-card spotlight-card" data-spotlight>
+     <span class="card-number">03</span>
+     <div>
+      <p class="tag">FORMATO LARGO</p>
+      <h3>YouTube & talking head</h3>
+      <p>Edición narrativa, limpieza de pausas, B-roll, títulos, sonido y continuidad visual.</p>
+     </div>
+     <span class="arrow">↗</span>
+    </article>
+   </div>
+  </section>
+
+  <section class="section-shell section-block reveal" id="portfolio">
+   <div class="section-heading works-heading">
+    <p class="eyebrow">TRABAJOS</p>
+    <h2>Una selección de proyectos que edité.</h2>
+    <p>
+     Acá vas a encontrar distintos tipos de contenido: reels, videos para redes,
+     highlights de stream y piezas pensadas según el objetivo de cada proyecto.
+    </p>
+   </div>
+
+   <div class="works-grid">
+
+    <!-- CARD 1 -->
+    <article class="work-card work-card-large">
+     <div class="work-media">
+      <img src="assets/images/Portada_1.png" alt="Portada del proyecto 1" />
+     </div>
+     <div class="work-overlay"></div>
+     <div class="work-content">
+      <span class="work-badge">VIAJES</span>
+      <h3>Cataratas del Iguazú</h3>
+      <p>
+       Breve descripción del video o del tipo de edición que realizaste
+       en este proyecto.
+      </p>
+      <button class="work-link open-project" type="button" data-video="assets/videos/Proyecto_1.mp4"
+       data-title="Cataratas del Iguazú" data-description="Proyecto de edición audiovisual.">
+       Ver proyecto ↗
+      </button>
+     </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="work-card">
+     <div class="work-media">
+      <img src="assets/images/Portada_2.png" alt="Portada del proyecto 2" />
+     </div>
+     <div class="work-overlay"></div>
+     <div class="work-content">
+      <span class="work-badge">STREAMING</span>
+      <h3>Fuera de guión</h3>
+      <p>
+       Breve descripción del video o del tipo de edición que realizaste.
+      </p>
+      <button class="work-link open-project" type="button" data-video="assets/videos/Proyecto_02.mov"
+       data-title="Fuera de Guion" data-description="Proyecto de edición audiovisual.">
+       Ver proyecto ↗
+      </button>
+     </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="work-card">
+     <div class="work-media">
+      <img src="assets/images/Portada_3.png" alt=" Portada del proyecto 3" />
+     </div>
+     <div class="work-overlay"></div>
+     <div class="work-content">
+      <span class="work-badge">STREAMING</span>
+      <h3>Níspero Play</h3>
+      <p>
+       Breve descripción del video o del tipo de edición que realizaste.
+      </p>
+      <button class="work-link open-project" type="button" data-video="assets/videos/Proyecto_03.mov"
+       data-title="Níspero Play" data-description="Proyecto de edición audiovisual.">
+       Ver proyecto ↗
+     </div>
+    </article>
+
+    <!-- CARD 4 -->
+    <article class="work-card work-card-wide">
+     <div class="work-media">
+      <img src="assets/images/Portada_4.png" alt="Portada del proyecto 4" />
+     </div>
+     <div class="work-overlay"></div>
+     <div class="work-content">
+      <span class="work-badge">GAMING</span>
+      <h3>Historia del Counter Strike</h3>
+      <p>
+       Breve descripción del video o del tipo de edición que realizaste
+       en este proyecto.
+      </p>
+      <button class="work-link open-project" type="button" data-video="assets/videos/Proyecto_04.mov"
+       data-title="Historia del Counter Strike" data-description="Proyecto de edición audiovisual.">
+       Ver proyecto ↗
+      </button>
+     </div>
+    </article>
+
+    <!-- CARD 5 -->
+    <article class="work-card">
+     <div class="work-media">
+      <img src="assets/images/Portada_5.png" alt="Portada del proyecto 5" />
+     </div>
+     <div class="work-overlay"></div>
+     <div class="work-content">
+      <span class="work-badge">GASTRONOMÍA</span>
+      <h3>Pizzería</h3>
+      <p>
+       Breve descripción del video o del tipo de edición que realizaste.
+      </p>
+      <button class="work-link open-project" type="button" data-video="assets/videos/Proyecto_05.mov"
+       data-title="Pizzería" data-description="Proyecto de edición audiovisual.">
+       Ver proyecto ↗
+      </button>
+     </div>
+    </article>
+
+    <!-- CARD 6 -->
+    <article class="work-card">
+     <div class="work-media">
+      <img src="assets/images/Portada_6.png" alt="Portada del proyecto 6" />
+     </div>
+     <div class="work-overlay"></div>
+     <div class="work-content">
+      <span class="work-badge">GASTRONOMÍA</span>
+      <h3>Restaurante "Kariño bonito"</h3>
+      <p>
+       Breve descripción del video o del tipo de edición que realizaste.
+      </p>
+      <button class="work-link open-project" type="button" data-video="assets/videos/Proyecto_06.mov"
+       data-title="Restaurante &quot;Kariño bonito&quot;" data-description="Proyecto de edición audiovisual.">
+       Ver proyecto ↗
+      </button>
+     </div>
+    </article>
+
+   </div>
+  </section>
+
+  <section class="section-shell section-block about reveal" id="sobre-mi">
+   <div class="about-images">
+    <figure class="portrait spotlight-card" data-spotlight>
+     <img src="assets/images/about-camila.jpg" alt="Camila, editora de video" />
+    </figure>
+    <figure class="setup spotlight-card" data-spotlight>
+     <img src="assets/images/setup-cr-edits.png" alt="Setup de edición de CR EDITS" />
+    </figure>
+   </div>
+
+   <div class="about-copy">
+    <p class="eyebrow">SOBRE MÍ</p>
+    <h2>Edición con criterio, curiosidad y ganas de seguir aprendiendo.</h2>
+    <p>
+     Soy Camila, editora de video autodidacta. Me gusta agarrar material en bruto y encontrarle el ritmo:
+     qué cortar, qué dejar respirar y qué recurso suma de verdad.
+    </p>
+    <p>
+     Trabajo principalmente con contenido para redes, streams, gaming, gastronomía, eventos y formatos de YouTube.
+     Si algo todavía no lo sé, lo investigo y lo aplico.
+    </p>
+    <div class="tool-row" aria-label="Herramientas">
+     <span>CapCut</span><span>OBS</span><span>Canva</span><span>Edición vertical</span>
+    </div>
+   </div>
+  </section>
+
+  <section class="section-shell section-block reveal">
+   <div class="section-heading">
+    <p class="eyebrow">CÓMO TRABAJO</p>
+    <h2>Simple, ordenado y sin vueltas.</h2>
+   </div>
+
+   <div class="process-grid">
+    <article class="process-item">
+     <span>01</span>
+     <h3>Me pasás el material</h3>
+     <p>Reviso objetivo, formato, referencias y qué querés transmitir.</p>
+    </article>
+    <article class="process-item">
+     <span>02</span>
+     <h3>Armo la edición</h3>
+     <p>Selecciono, corto, ritmo, subtítulos, sonido y recursos necesarios.</p>
+    </article>
+    <article class="process-item">
+     <span>03</span>
+     <h3>Ajustamos</h3>
+     <p>Revisamos detalles y dejo la pieza lista para publicar.</p>
+    </article>
+   </div>
+  </section>
+
+  <section class="section-shell contact reveal" id="contacto">
+   <div class="contact-glow" aria-hidden="true"></div>
+   <p class="eyebrow">CONTACTO</p>
+   <h2>¿Tenés material para editar?</h2>
+   <p>
+    Contame qué estás haciendo y vemos cómo llevarlo
+    a una pieza que funcione.
+   </p>
+   <div class="contact-actions">
+    <a class="button button-primary" href="mailto:cami666.rios@gmail.com">
+     Escribime por mail
+    </a>
+    <a class="button button-whatsapp" href="https://wa.me/5491133014084" target="_blank" rel="noopener noreferrer">
+     WhatsApp
+    </a>
+   </div>
+  </section>
+ </main>
+
+ <footer class="footer section-shell">
+  <div class="footer-brand">
+   <img src="assets/images/logo-cr-edits.png" alt="Logo CR EDITS" />
+   <div><strong>CR EDITS</strong><span>Video Editor</span></div>
+  </div>
+  <p>© <span id="year"></span> CR EDITS</p>
+ </footer>
+
+ <script src="script.js"></script>
 </body>
+
 </html>
